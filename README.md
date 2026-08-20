@@ -1,6 +1,6 @@
 # 🧠 Product OS — Démo
 
-> 👁️ **Ceci est une version démo, à but de présentation.** Elle montre l'architecture complète de mon système de travail assisté par IA (skills, agents, docs). Seuls quelques skills représentatifs sont exposés en détail (`create-skill`, `write-spec`, `prd-technical`, `code-review`) — le reste est présent en tant qu'entrée de catalogue (nom, description, rôle) mais son contenu détaillé reste dans la version privée.
+> 👁️ **Ceci est une version démo, à but de présentation.** Elle montre l'architecture de mon système de travail assisté par IA (skills, docs). Seuls 3 skills représentatifs sont exposés en détail (`create-skill`, `write-spec`, `benchmark`) — le reste (autres skills, agents) vit dans la version privée et n'apparaît pas ici.
 
 Repo central de mon système de travail assisté par IA.  
 Contient mes skills, agents, templates et docs de référence.
@@ -13,8 +13,8 @@ Contient mes skills, agents, templates et docs de référence.
 product-os/
 ├── .claude-plugin/
 │   └── plugin.json      ← Manifeste du plugin ({ "name": "product-os-demo" })
-├── skills/               ← Skills Claude Code natifs (code/, product/, <nom>/SKILL.md)
-├── agents/               ← Subagents Claude Code natifs (déclencheur + output défini)
+├── skills/               ← Skills Claude Code natifs (<nom>/SKILL.md) — 3 skills vitrine dans cette démo
+├── agents/               ← Vide dans cette démo — les agents restent dans la version privée
 ├── docs/                 ← Guides de décision et workflows
 └── templates/            ← Fichiers à copier/compléter dans chaque nouveau projet
 ```
@@ -69,40 +69,30 @@ Limites : ça fonctionne pour les skills, pas les agents (Code/Cowork uniquement
 
 ```
 Idée
- └→ [skill] write-spec          → spec structurée
- └→ [skill] prd-functional      → PRD fonctionnel
- └→ [skill] prd-technical       → PRD technique (prêt à coder)
- └→ [skill] spec-to-linear      → tickets Linear créés
- └→ [agent] feature-builder     → Claude Code implémente
- └→ [skill] code-review         → review avant merge
+ └→ [skill] write-spec          → spec structurée                     (démo)
+ └→ [skill] prd-functional      → PRD fonctionnel                     (version complète)
+ └→ [skill] prd-technical       → PRD technique (prêt à coder)        (version complète)
+ └→ [skill] spec-to-linear      → tickets Linear créés                (version complète)
+ └→ [agent] feature-builder     → Claude Code implémente              (version complète)
+ └→ [skill] code-review         → review avant merge                  (version complète)
 ```
+
+En amont du flow, indépendamment : `[skill] benchmark` → analyse concurrentielle structurée *(démo)*.
 
 ---
 
 ## Ajouter un skill
 
-Copie `templates/new-skill.md` dans `skills/code/<nom-du-skill>/SKILL.md` ou `skills/product/<nom-du-skill>/SKILL.md`, remplis les sections (dont le frontmatter `name`/`description`). Rien d'autre à faire — en mode plugin, le nouveau skill est disponible dès la session `claude-os` suivante.
+Copie `templates/new-skill.md` dans `skills/<nom-du-skill>/SKILL.md`, remplis les sections (dont le frontmatter `name`/`description`). Rien d'autre à faire — en mode plugin, le nouveau skill est disponible dès la session `claude-os` suivante.
 
 ---
 
 ## Statut des skills
 
-🟢 écrit = instructions/format/règles complets, prêt à l'emploi. 🟡 draft = squelette, à rédiger. 👁️ vitrine = contenu détaillé exposé dans cette démo. 🔒 masqué = entrée de catalogue seulement, contenu détaillé dans la version privée.
+🟢 écrit = instructions/format/règles complets, prêt à l'emploi. Les autres skills du système complet (Meta, Code, Product, Pro) vivent dans la version privée et n'apparaissent pas dans cette démo.
 
-| Skill | Catégorie | Statut | Démo |
-|---|---|---|---|
-| [`create-skill`](skills/create-skill/SKILL.md) | Meta | 🟢 écrit | 👁️ vitrine |
-| [`init-project`](skills/init-project/SKILL.md) | Meta | 🟢 écrit | 🔒 masqué |
-| [`code-review`](skills/code/code-review/SKILL.md) | Code | 🟢 écrit | 👁️ vitrine |
-| [`feature-builder`](skills/code/feature-builder/SKILL.md) | Code | 🟢 écrit | 🔒 masqué |
-| [`test-writer`](skills/code/test-writer/SKILL.md) | Code | 🟢 écrit | 🔒 masqué |
-| [`write-spec`](skills/product/write-spec/SKILL.md) | Product | 🟢 écrit | 👁️ vitrine |
-| [`prd-functional`](skills/product/prd-functional/SKILL.md) | Product | 🟢 écrit | 🔒 masqué |
-| [`prd-technical`](skills/product/prd-technical/SKILL.md) | Product | 🟢 écrit | 👁️ vitrine |
-| [`spec-to-linear`](skills/product/spec-to-linear/SKILL.md) | Product | 🟢 écrit | 🔒 masqué |
-| [`benchmark`](skills/product/benchmark/SKILL.md) | Product | 🟢 écrit | 🔒 masqué |
-| [`market-sizing`](skills/product/market-sizing/SKILL.md) | Product | 🟢 écrit | 🔒 masqué |
-| [`content-comm`](skills/product/content-comm/SKILL.md) | Product | 🟢 écrit | 🔒 masqué |
-| [`prd-design`](skills/product/prd-design/SKILL.md) | Product | 🟡 draft | ➖ n/a |
-| [`documentation`](skills/product/documentation/SKILL.md) | Product | 🟡 draft | ➖ n/a |
-| [`experience-interviewer`](skills/pro/skills_itw/experience-interviewer/SKILL.md) | Pro | 🟢 écrit | 🔒 masqué |
+| Skill | Catégorie | Statut |
+|---|---|---|
+| [`create-skill`](skills/create-skill/SKILL.md) | Meta | 🟢 écrit |
+| [`write-spec`](skills/write-spec/SKILL.md) | Product | 🟢 écrit |
+| [`benchmark`](skills/benchmark/SKILL.md) | Product | 🟢 écrit |

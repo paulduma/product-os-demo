@@ -57,33 +57,17 @@ Mon objectif : être décideur + validateur. Les agents font 80% de l'exécution
 
 Source : `~/product-os/skills/`. Chargés automatiquement à chaque session Claude Code lancée avec `claude --plugin-dir ~/product-os` (alias `claude-os`) — pas besoin de chemin, Claude les invoque lui-même ou sur demande : *"Utilise le skill [nom] pour [tâche]"*
 
-### Meta
+> 👁️ Dépôt de démo — seuls les 3 skills ci-dessous sont présents. Le reste (Meta, Code, Product, Pro) vit dans la version privée.
+
 - `create-skill` — créer ou compléter un skill Claude pour ce repo
-- `init-project` — checklist d'intégration d'un projet au Product OS (CLAUDE.md, Git, Linear)
-
-### Code
-- `code-review` — review d'un fichier ou d'une PR
-- `test-writer` — génère les tests après une feature
-- `feature-builder` — implémente une feature depuis une spec
-
-### Product
 - `write-spec` — idée vague → spec structurée
-- `prd-functional` — spec → PRD fonctionnel
-- `prd-technical` — PRD fonctionnel → PRD technique
-- `spec-to-linear` — PRD → tickets Linear
 - `benchmark` — analyse concurrentielle structurée
-- `market-sizing` — estimation de marché
-- `content-comm` — contenu LinkedIn / newsletter
-- `prd-design` — *placeholder, à compléter*
-- `documentation` — *placeholder, à compléter*
 
 ## Agents disponibles
 
 Source : `~/product-os/agents/`. Chargés automatiquement en mode plugin (`claude-os`), disponibles nativement comme subagents.
 
-- `weekly-review` — chaque lundi matin
-- `spec-to-ticket` — idée → spec → tickets Linear
-- `stakeholder-update` — tickets fermés → update partageable
+> 👁️ Dépôt de démo — dossier vide, les agents vivent dans la version privée.
 
 ## Historique des décisions importantes
 
