@@ -57,9 +57,10 @@ Mon objectif : être décideur + validateur. Les agents font 80% de l'exécution
 
 Source : `~/product-os/skills/`. Chargés automatiquement à chaque session Claude Code lancée avec `claude --plugin-dir ~/product-os` (alias `claude-os`) — pas besoin de chemin, Claude les invoque lui-même ou sur demande : *"Utilise le skill [nom] pour [tâche]"*
 
-> 👁️ Dépôt de démo — seuls les 3 skills ci-dessous sont présents. Le reste (Meta, Code, Product, Pro) vit dans la version privée.
+> 👁️ Dépôt de démo — seuls les 4 skills ci-dessous sont présents. Le reste (Meta, Code, Product, Pro) vit dans la version privée.
 
 - `create-skill` — créer ou compléter un skill Claude pour ce repo
+- `init-project` — checklist d'intégration d'un projet au Product OS (CLAUDE.md, Git, Linear)
 - `write-spec` — idée vague → spec structurée
 - `benchmark` — analyse concurrentielle structurée
 

@@ -1,6 +1,6 @@
 # 🧠 Product OS — Démo
 
-> 👁️ **Ceci est une version démo, à but de présentation.** Elle montre l'architecture de mon système de travail assisté par IA (skills, docs). Seuls 3 skills représentatifs sont exposés en détail (`create-skill`, `write-spec`, `benchmark`) — le reste (autres skills, agents) vit dans la version privée et n'apparaît pas ici.
+> 👁️ **Ceci est une version démo, à but de présentation.** Elle montre l'architecture de mon système de travail assisté par IA (skills, docs). Seuls 4 skills représentatifs sont exposés en détail (`create-skill`, `write-spec`, `benchmark`, `init-project`) — le reste (autres skills, agents) vit dans la version privée et n'apparaît pas ici.
 
 Repo central de mon système de travail assisté par IA.  
 Contient mes skills, agents, templates et docs de référence.
@@ -13,7 +13,7 @@ Contient mes skills, agents, templates et docs de référence.
 product-os/
 ├── .claude-plugin/
 │   └── plugin.json      ← Manifeste du plugin ({ "name": "product-os-demo" })
-├── skills/               ← Skills Claude Code natifs (<nom>/SKILL.md) — 3 skills vitrine dans cette démo
+├── skills/               ← Skills Claude Code natifs (<nom>/SKILL.md) — 4 skills vitrine dans cette démo
 ├── agents/               ← Vide dans cette démo — les agents restent dans la version privée
 ├── docs/                 ← Guides de décision et workflows
 └── templates/            ← Fichiers à copier/compléter dans chaque nouveau projet
@@ -94,5 +94,6 @@ Copie `templates/new-skill.md` dans `skills/<nom-du-skill>/SKILL.md`, remplis le
 | Skill | Catégorie | Statut |
 |---|---|---|
 | [`create-skill`](skills/create-skill/SKILL.md) | Meta | 🟢 écrit |
+| [`init-project`](skills/init-project/SKILL.md) | Meta | 🟢 écrit |
 | [`write-spec`](skills/write-spec/SKILL.md) | Product | 🟢 écrit |
 | [`benchmark`](skills/benchmark/SKILL.md) | Product | 🟢 écrit |
