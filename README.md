@@ -25,15 +25,36 @@ product-os/
 
 ### 1. Premier setup (une seule fois)
 
-Clone le repo dans ton home :
+Clone le repo dans ton home (adapte le chemin si tu le mets ailleurs — l'alias ci-dessous devra pointer vers le même endroit) :
 ```bash
 git clone <repo-url> ~/product-os
 ```
 
-Ajoute dans `.bashrc` / `.zshrc` :
+Repère ton shell :
 ```bash
-alias claude-os='claude --plugin-dir ~/product-os'
+echo $SHELL
 ```
+- `/bin/zsh` (par défaut sur macOS récent) → fichier à éditer : `~/.zshrc`
+- `/bin/bash` → fichier à éditer : `~/.bashrc` (ou `~/.bash_profile`)
+
+Ajoute l'alias à la fin du fichier :
+```bash
+echo "alias claude-os='claude --plugin-dir ~/product-os'" >> ~/.zshrc
+```
+(remplace `~/product-os` par le chemin réel si le repo est ailleurs)
+
+Recharge le shell pour que l'alias soit reconnu (ou ouvre un nouveau terminal) :
+```bash
+source ~/.zshrc
+```
+
+Vérifie que l'alias est bien défini :
+```bash
+alias claude-os
+# → claude-os='claude --plugin-dir ~/product-os'
+```
+
+Vérifie que les skills se chargent : lance `claude-os` depuis n'importe quel dossier, puis tape `/` dans le prompt — les skills du repo doivent apparaître dans le menu (namespacés `product-os:<nom>` en cas de collision avec un skill natif Claude Code). `/help` liste aussi tout ce qui est chargé. `/plugin` ouvre le gestionnaire de plugins si besoin de débugger un chargement qui échoue.
 
 ### 2. Usage quotidien (Claude Code)
 
