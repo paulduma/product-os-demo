@@ -6,6 +6,7 @@
 - [] add claude.local.md file and explain how to use it
 - [] review scenarios from how-to and improve
 - [] build an agent example
+- [] review full wording of claude and readme .md files to make it understandable to implement by any org / solopreneur (how to address both ?)
 tbd
 - [] add / publish into a demo repo (ex agents website) ?
 - [] add demos files or recordings in an assets/ folder ?
