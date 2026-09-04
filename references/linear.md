@@ -2,7 +2,7 @@
 
 Référence de hiérarchie et conventions pour toute skill créant ou éditant des projects/issues dans Linear (`spec-to-linear`, `write-spec`, etc.).
 
-Le workspace Linear précis à utiliser est donné par le `CLAUDE.local.md` du projet en cours — ne jamais le déduire ou le deviner ici.
+Le workspace Linear précis à utiliser est donné par le `CLAUDE.md` global (table Outils, entrée Linear) — ne jamais le déduire ou le deviner ici.
 
 ## Contexte du workspace
 

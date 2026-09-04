@@ -16,8 +16,8 @@ Mon objectif : être décideur + validateur. Les agents font 80% de l'exécution
 |---|---|
 | Claude Code | Features complètes, multi-fichiers, tâches autonomes |
 | Claude Cowork | Specs, PRD, Notion, Linear, orchestration |
-| Notion | Documentation, base de connaissance |
-| Linear | Tickets, backlog, sprints |
+| Notion | Documentation, base de connaissance — page racine (cette page + enfants seulement, jamais le reste du workspace) : https://app.notion.com/p/Product-os-Demo-3c33d8616dbb807eb2d3cee91810811b |
+| Linear | Tickets, backlog, sprints — workspace : https://linear.app/product-os-demo |
 
 ## Stack commune à tous mes projets
 
