@@ -1,0 +1,14 @@
+# CLAUDE.local.md — [Nom du projet]
+
+> Fichier local, jamais commit (voir `.gitignore`). Contient les identifiants de workspace propres à cette machine/cet utilisateur.
+> Les skills et agents qui touchent Linear/Notion (`spec-to-linear`, `write-spec`, `weekly-review`, ...) lisent ce fichier pour savoir où agir — ne jamais deviner un workspace ailleurs.
+
+## Linear
+
+- **Workspace :** [nom du workspace Linear]
+- **Project :** [nom/ID du Project Linear correspondant à ce repo]
+
+## Notion
+
+- **Workspace :** [nom du workspace Notion]
+- **Page racine :** [nom/URL de la page ou base parente utilisée pour ce projet, si applicable]

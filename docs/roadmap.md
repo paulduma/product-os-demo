@@ -1,8 +1,8 @@
 # Roadmap for the demo
 
 ## Actions to complete
-- [] set up test environment (Notion + Linear space examples)
-- [] review skills
+- [x] set up test environment (Notion + Linear space examples)
+- [x] review skills
 - [] add claude.local.md file and explain how to use it
 - [] review scenarios from how-to and improve
 - [] build an agent example
