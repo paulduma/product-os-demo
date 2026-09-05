@@ -66,10 +66,11 @@ La spec dit le *quoi*. Linear dit le *comment le faire*, en jobs qu'un agent pou
    - **Entrée = ticket existant** : mets **à jour ce ticket** (titre préfixé si besoin, description agent-ready). N'en crée pas un doublon. Ajoute des sub-issues pour les étapes techniques. Si la V1 exige vraiment plusieurs features, le ticket source reste l'Issue principale ; les autres sont des Issues sœurs, pas un second brouillon backlog.
    - **Entrée = texte libre** : crée les items (pas de ticket source à réutiliser).
    - Description jamais vide. Titres d'Issue préfixés `(feat)` / `(fix)` / `(chore)` + label du même type. Milestone = phase (MVP, v0, …) avec target date si on en a une, sinon demande.
+   - En tête de chaque description, avant `Contexte` : un **Résumé fonctionnel** (ce que ça fait, explicite) et un **Résumé technique** (comment c'est construit, choix d'archi). Deux à trois phrases chacun, jamais plus — c'est un one-pager de review, pas un résumé de la spec.
 6. **Statut — prêts à dev.** Les Issues (et sub-issues) livrées ne restent **pas** en Backlog. Passe-les sur l'état unstarted du workflow qui correspond à *à faire* : **Todo**, **To Do** ou **Planned** — prends celui qui existe dans le workspace (liste les états, ne l'invente pas). Backlog = idée brute seulement.
 7. Rends les URLs + l'ancien / nouveau statut. Si les outils Linear sont indisponibles : signale-le et livre le découpage en markdown — ne pas inventer de tickets.
 
-Un ticket Linear doit pouvoir être collé tel quel à un agent : contexte, comportement attendu, hors-scope, critère "c'est fini", fichiers / zones probables si tu les connais. Pas de "améliorer l'UX". Des étapes techniques.
+Un ticket Linear doit pouvoir être collé tel quel à un agent : contexte, comportement attendu, hors-scope, critère "c'est fini", fichiers / zones probables si tu les connais. Pas de "améliorer l'UX". Des étapes techniques. Et il doit aussi se lire en 10 secondes par un humain : c'est le rôle des deux résumés en tête — ils permettent de valider le ticket avant de lancer l'agent `build` dessus, sans rouvrir la spec.
 
 ---
 
@@ -137,6 +138,12 @@ Un ticket Linear doit pouvoir être collé tel quel à un agent : contexte, comp
 Chaque Issue créée doit avoir une description de cette forme :
 
 ```markdown
+## Résumé fonctionnel
+[2-3 phrases max : ce que ça fait et comment ça se comporte, explicite — le "quoi" en clair, pour review humaine]
+
+## Résumé technique
+[2-3 phrases max : comment c'est construit — choix techniques/architecturaux clés, composants ou fichiers touchés]
+
 ## Contexte
 [Lien vers la spec / pourquoi ce ticket existe]
 
@@ -153,6 +160,8 @@ Chaque Issue créée doit avoir une description de cette forme :
 - [fichiers, contraintes, pièges — assez pour un agent, pas un roman]
 ```
 
+Les deux résumés du haut sont pour toi (review avant de lancer l'agent `build`), le reste est pour l'agent. Pas de redite entre les deux : le résumé fonctionnel condense "Comportement attendu", pas l'inverse.
+
 Sub-issues = phrases courtes = étapes techniques (pas des user stories).
 
 ---
@@ -165,6 +174,7 @@ Sub-issues = phrases courtes = étapes techniques (pas des user stories).
 - Si l'idée est trop large, forcer une V1 plus petite
 - Signaler si ça ressemble à un concurrent / à de l'existant dans le repo
 - Linear : suivre `references/linear.md` à la lettre ; jamais de Project créé sans confirmation ; jamais de description vide
+- Chaque description d'Issue commence par Résumé fonctionnel + Résumé technique (2-3 phrases chacun) — c'est ce qui permet de valider le ticket avant de lancer l'agent `build`, sans en écrire plus que nécessaire
 - Ticket backlog en entrée : **mettre à jour** ce ticket, ne pas en créer un jumeau
 - Issues livrées = statut **Todo / To Do / Planned** (celui du workflow), jamais laissées en Backlog
 - Un ticket que seul l'auteur comprend est un ticket raté — écrire pour Claude Code / Cursor
