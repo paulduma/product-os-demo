@@ -5,6 +5,8 @@ description: [Ce que fait ce skill ET quand l'utiliser, en une phrase. C'est ce 
 
 # Skill — [Nom du skill]
 
+**Statut :** 🟡 Draft
+
 **Rôle :** [Ce que fait ce skill en une phrase]  
 **Input :** [Ce qu'il faut lui donner]  
 **Output :** [Ce qu'il produit]

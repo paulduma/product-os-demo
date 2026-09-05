@@ -4,20 +4,20 @@
 
 **Légende contenu**
 - 🟡 `draft` — squelette posé, pas encore rédigé, pas utilisable tel quel
-- 🟢 `écrit` — instructions/format/règles complets, prêt à être utilisé
+- 🟢 `ready` — instructions/format/règles complets, prêt à être utilisé
 
 | Skill | Description | Statut |
 |---|---|---|
-| [`create-skill`](../skills/create-skill/SKILL.md) | Crée ou complète un skill Claude réutilisable pour ce repo | 🟢 écrit |
-| [`init-project`](../skills/init-project/SKILL.md) | Initialise/remet aux normes un projet avec le Product OS | 🟢 écrit |
-| [`write-spec`](../skills/write-spec/SKILL.md) | Idée vague → spec structurée | 🟢 écrit |
-| [`benchmark`](../skills/benchmark/SKILL.md) | Analyse concurrentielle structurée | 🟢 écrit |
+| [`create-skill`](../skills/create-skill/SKILL.md) | Crée ou complète un skill Claude réutilisable pour ce repo | 🟢 ready |
+| [`init-project`](../skills/init-project/SKILL.md) | Initialise/remet aux normes un projet avec le Product OS | 🟢 ready |
+| [`write-spec`](../skills/write-spec/SKILL.md) | Idée vague → spec structurée | 🟢 ready |
+| [`benchmark`](../skills/benchmark/SKILL.md) | Analyse concurrentielle structurée | 🟢 ready |
 
 ---
 
 ## Quand tu ajoutes un nouveau skill
 
 Ajoute une ligne dans la catégorie correspondante avec statut `🟡 draft` et
-test `➖ n/a` par défaut, puis fais-la passer à `🟢 écrit` / `⚪ pending test`
+test `➖ n/a` par défaut, puis fais-la passer à `🟢 ready` / `⚪ pending test`
 une fois le contenu rédigé — voir `README.md` section "Ajouter un skill"
 pour la procédure de création.

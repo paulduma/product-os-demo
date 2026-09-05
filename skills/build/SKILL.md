@@ -5,7 +5,7 @@ description: Résout une cible Linear (Milestone ou Issue) en liste d'unités à
 
 # Skill — Build
 
-**Statut :** 🟢 Ready — en attente de test en conditions réelles
+**Statut :** 🟢 Ready
 
 **Rôle :** Transformer un lien Linear (Milestone ou Issue) en liste d'unités de travail concrètes à implémenter, en excluant ce qui est déjà traité ou hors périmètre.
 **Input :** Un lien Linear (URL Milestone ou URL Issue)
@@ -15,7 +15,6 @@ description: Résout une cible Linear (Milestone ou Issue) en liste d'unités à
 
 ## Instructions
 
-Tu prépares le terrain pour l'agent `build`, qui va ensuite implémenter chaque unité. Ton job ici s'arrête à la résolution de la liste et à la lecture des tickets — pas à l'exécution.
 
 ### Étape 1 — Détecter le mode
 

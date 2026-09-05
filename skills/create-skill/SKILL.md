@@ -5,7 +5,7 @@ description: Crée ou complète un skill Claude réutilisable pour ce repo (Code
 
 # Skill — Create Skill
 
-**Statut :** 🟢 Écrit — en attente de test en conditions réelles
+**Statut :** 🟢 Ready
 
 **Rôle :** Créer ou compléter un skill Claude réutilisable pour ce repo (Code + Cowork).  
 **Input :** Description du workflow à capturer (idée libre, brouillon, ou skill incomplet)  
@@ -47,6 +47,8 @@ mode: reference  # uniquement si transposable en règle Cursor (cf. étape 4) �
 
 # Skill — [Nom du skill]
 
+**Statut :** 🟡 Draft
+
 **Rôle :** [Ce que fait ce skill en une phrase]
 **Input :** [Ce qu'il faut lui donner]
 **Output :** [Ce qu'il produit]
@@ -87,6 +89,7 @@ Tu es [rôle]. Ton rôle est de...
 - Ne pas mélanger plusieurs workflows dans un seul skill — scinder si nécessaire
 - Pour les skills code : rappeler de lire `CLAUDE.md` du projet avant d'agir
 - Si l'utilisateur donne du texte exact pour le skill, le reprendre **verbatim** — ne pas paraphraser
+- Le champ **Statut** utilise exclusivement 🟡 `Draft` (contenu pas encore complet) ou 🟢 `Ready` (instructions/format/règles complets) — jamais "Écrit" ni une autre variante. Un nouveau skill part en `Draft`, passe à `Ready` une fois rédigé. Répercute le changement dans `docs/skills-status.md` et `README.md` (section "Statut des skills")
 
 ## Checklist avant de livrer
 
@@ -94,6 +97,7 @@ Tu es [rôle]. Ton rôle est de...
 - [ ] `description:` déclencheuse (quoi + quand)
 - [ ] `mode: reference` ajouté si (et seulement si) le skill est transposable en règle Cursor
 - [ ] Dossier `code/` ou `product/` justifié
+- [ ] Statut renseigné (🟡 Draft / 🟢 Ready) et synchronisé dans `docs/skills-status.md` + `README.md`
 - [ ] Rôle / Input / Output remplis
 - [ ] Instructions avec étapes numérotées
 - [ ] Format de sortie avec template concret

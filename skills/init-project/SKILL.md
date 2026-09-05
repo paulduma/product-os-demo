@@ -5,7 +5,7 @@ description: Initialise ou remet aux normes un projet avec le Product OS — cr�
 
 # Skill — Init Project
 
-**Statut :** 🟢 Écrit — en attente de test en conditions réelles
+**Statut :** 🟢 Ready
 
 **Rôle :** Faire passer un projet (nouveau ou existant) par la checklist complète d'intégration au Product OS.
 **Input :** Chemin du projet (défaut : dossier courant)

@@ -5,7 +5,7 @@ description: Produit une analyse concurrentielle structurée et actionnable, ave
 
 # Skill — Benchmark
 
-**Statut :** 🟢 Écrit — en attente de test en conditions réelles
+**Statut :** 🟢 Ready
 
 **Rôle :** Produire une analyse concurrentielle structurée et actionnnable, puis la publier comme page Notion.  
 **Input :** Nom du produit/feature à analyser + liste de concurrents (ou secteur) + page Notion parente (optionnelle)  

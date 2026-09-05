@@ -5,7 +5,7 @@ description: Challenge une idée produit (texte libre ou ticket Linear backlog),
 
 # Skill — Write Spec
 
-**Statut :** 🟢 Écrit — en attente de test en conditions réelles
+**Statut :** 🟢 Ready
 
 **Rôle :** Challenger une idée, figer ce qui doit se passer pour l'utilisateur, puis créer **ou mettre à jour** les tickets Linear pour qu'ils soient prêts à dev (statut Todo / Planned).  
 **Input :** soit le contexte en texte libre (2 lignes min), soit un ticket Linear backlog (URL, ID type `POS-12`, ou titre) — plus les précisions au fil du challenge  

@@ -110,11 +110,11 @@ Copie `templates/new-skill.md` dans `skills/<nom-du-skill>/SKILL.md`, remplis le
 
 ## Statut des skills
 
-🟢 écrit = instructions/format/règles complets, prêt à l'emploi. Les autres skills du système complet (Meta, Code, Product, Pro) vivent dans la version privée et n'apparaissent pas dans cette démo.
+🟢 Ready = instructions/format/règles complets, prêt à l'emploi. Les autres skills du système complet (Meta, Code, Product, Pro) vivent dans la version privée et n'apparaissent pas dans cette démo.
 
 | Skill | Catégorie | Statut |
 |---|---|---|
-| [`create-skill`](skills/create-skill/SKILL.md) | Meta | 🟢 écrit |
-| [`init-project`](skills/init-project/SKILL.md) | Meta | 🟢 écrit |
-| [`write-spec`](skills/write-spec/SKILL.md) | Product | 🟢 écrit |
-| [`benchmark`](skills/benchmark/SKILL.md) | Product | 🟢 écrit |
+| [`create-skill`](skills/create-skill/SKILL.md) | Meta | 🟢 Ready |
+| [`init-project`](skills/init-project/SKILL.md) | Meta | 🟢 Ready |
+| [`write-spec`](skills/write-spec/SKILL.md) | Product | 🟢 Ready |
+| [`benchmark`](skills/benchmark/SKILL.md) | Product | 🟢 Ready |
