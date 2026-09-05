@@ -1,9 +1,18 @@
 # Roadmap for the demo
 
+Où j'en suis (05.Sept):
+- les skills principales sont créées
+- tester le framework complet sur un projet fake
+- tester comment automatiser avec des agents (cible)
+- commencer à construire le wording, le playbook
+- basculer sur le website agents pour le marketer
+- faire la newsletter substack avec des articles pour expliquer comment le construire
+
+Vision à reprendre
+- PM -> travailler son adoption: déléguer les 80% des disco faites en 20% du temps, passer plus de temps sur le 20% restant fait en 80% du temps
+- Solo builders -> accélérer son dev avec des workflows automatisés, pour passer plus de temps sur le concret (marketing, user interview, levées, etc...)
+
 ## Actions to complete
-- [x] set up test environment (Notion + Linear space examples)
-- [x] review skills
-- [x] add claude.local.md file and explain how to use it
 - [] review scenarios from how-to and improve
 - [] build an agent example
 - [] review full wording of claude and readme .md files to make it understandable to implement by any org / solopreneur (how to address both ?)
