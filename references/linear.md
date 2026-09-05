@@ -31,4 +31,8 @@ Le workspace Linear précis à utiliser est donné par le `CLAUDE.md` global (ta
 ### Sub-issue
 - Titre = phrase courte et claire décrivant l'étape/tâche.
 
-Priorités et statuts du workflow : gérés par la skill qui crée/édite l'item, pas définis ici.
+### Statut
+- **Backlog** = idée brute, pas encore specée.
+- Ticket prêt à dev (après `write-spec`) : passer en **Todo** / **To Do** / **Planned** — l'état unstarted du workflow, pas Backlog. Prendre le nom qui existe dans le workspace.
+
+Priorités : gérées par la skill qui crée/édite l'item, pas définies ici.
