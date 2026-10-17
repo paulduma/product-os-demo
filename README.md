@@ -1,118 +1,126 @@
-# 🧠 Product OS — Démo
+# 🧠 Product OS — Demo
 
-> 👁️ **Ceci est une version démo, à but de présentation.** Elle montre l'architecture de mon système de travail assisté par IA (skills, docs). Seuls 4 skills représentatifs sont exposés en détail (`create-skill`, `write-spec`, `benchmark`, `init-project`) — le reste (autres skills, agents) vit dans la version privée et n'apparaît pas ici.
-
-Repo central de mon système de travail assisté par IA.  
-Contient mes skills, agents, templates et docs de référence.
+> 👁️ **This is a demo version, meant for presentation.** It shows the architecture of an AI operating system that I created for a personal usage, to which I have extended it to a professional usage. 
+It contains a set of skills, workflows and documentation that is meant to be used for projects you're working on, alone or with your teams.
+Only 4 representative skills are displayed in detail in that repo (`create-skill`, `write-spec`, `benchmark`, `init-project`); the rest (other skills, agents) lives in the private version and does not appear here.
 
 ---
 
 ## Structure
 
+This product-os has the following architecture
 ```
 product-os/
 ├── .claude-plugin/
-│   └── plugin.json      ← Manifeste du plugin ({ "name": "product-os-demo" })
-├── skills/               ← Skills Claude Code natifs (<nom>/SKILL.md) — 4 skills vitrine dans cette démo
-├── agents/               ← Vide dans cette démo — les agents restent dans la version privée
-├── docs/                 ← Guides de décision et workflows
-└── templates/            ← Fichiers à copier/compléter dans chaque nouveau projet
+│   └── plugin.json      ← Plugin manifest ({ "name": "product-os-demo" })
+├── skills/               ← Native Claude Code skills (<name>/SKILL.md) — 4 showcase skills in this demo
+├── agents/               ← Empty in this demo — agents stay in the private version
+├── docs/                 ← Decision guides, documentation on your context
+└── templates/            ← Files to copy/fill in for each new project
 ```
-
 ---
 
-## Comment utiliser ce repo
+## How to use this repo
 
-### 1. Premier setup (une seule fois)
+For Product Managers working on prototypes but not pushing real code in production, I sugested cloning this repository locally with the following organization
+```
+root-folder/             ← e.g Desktop/Projects
+├── product-os/          ← clone this repo here
+├── codebase/            ← the company full repositories, cloned and indexed here for context
+└── new_project/         ← the current project or prototype they're working on
+```
+They can then open a claude session from their new project folder, with a set up to read the product-os and codebase and use it for the skills and context. Here's how to set it up that way below
 
-Clone le repo dans ton home (adapte le chemin si tu le mets ailleurs — l'alias ci-dessous devra pointer vers le même endroit) :
+### 1. First-time setup (once only)
+
+Clone the repo into your home directory (adjust the path if you put it somewhere else — the alias below must point to the same place):
 ```bash
 git clone <repo-url> ~/product-os
 ```
 
-Repère ton shell :
+Find your shell:
 ```bash
 echo $SHELL
 ```
-- `/bin/zsh` (par défaut sur macOS récent) → fichier à éditer : `~/.zshrc`
-- `/bin/bash` → fichier à éditer : `~/.bashrc` (ou `~/.bash_profile`)
+- `/bin/zsh` (default on recent macOS) → file to edit: `~/.zshrc`
+- `/bin/bash` → file to edit: `~/.bashrc` (or `~/.bash_profile`)
 
-Ajoute l'alias à la fin du fichier :
+Add the alias at the end of the file:
 ```bash
 echo "alias claude-os='claude --plugin-dir ~/product-os'" >> ~/.zshrc
 ```
-(remplace `~/product-os` par le chemin réel si le repo est ailleurs)
+(replace `~/product-os` with the real path if the repo lives elsewhere)
 
-Recharge le shell pour que l'alias soit reconnu (ou ouvre un nouveau terminal) :
+Reload the shell so the alias is recognized (or open a new terminal):
 ```bash
 source ~/.zshrc
 ```
 
-Vérifie que l'alias est bien défini :
+Check that the alias is defined:
 ```bash
 alias claude-os
 # → claude-os='claude --plugin-dir ~/product-os'
 ```
 
-Vérifie que les skills se chargent : lance `claude-os` depuis n'importe quel dossier, puis tape `/` dans le prompt — les skills du repo doivent apparaître dans le menu (namespacés `product-os:<nom>` en cas de collision avec un skill natif Claude Code). `/help` liste aussi tout ce qui est chargé. `/plugin` ouvre le gestionnaire de plugins si besoin de débugger un chargement qui échoue.
+Check that skills load: run `claude-os` from any folder, then type `/` in the prompt — the repo's skills should appear in the menu (namespaced as `product-os:<name>` if they collide with a native Claude Code skill). `/help` also lists everything that is loaded. `/plugin` opens the plugin manager if you need to debug a load that fails.
 
-### 2. Usage quotidien (Claude Code)
+### 2. Daily use (Claude Code)
 
-Depuis n'importe quel repo :
+From any repo:
 ```bash
 claude-os
 ```
 
-Skills et agents sont chargés automatiquement à l'ouverture de session — pas de sync, pas de symlink, pas de packaging. Le dossier `product-os/` est lu tel quel à chaque lancement : toute modif prend effet immédiatement à la session suivante.
+Skills and agents load automatically when the session opens — no sync, no symlink, no packaging. The `product-os/` folder is read as-is on every launch: any change takes effect immediately in the next session.
 
 ```
-Décris juste la tâche → Claude choisit le bon skill
+Just describe the task → Claude picks the right skill
 ```
 ```
-Utilise le skill [nom] pour [tâche]
-Utilise l'agent [nom]
+Use the skill [name] for [task]
+Use the agent [name]
 ```
 
-Skills et agents disponibles : voir [`CLAUDE.md`](CLAUDE.md) (section "Skills disponibles" / "Agents disponibles").
+Available skills and agents: see [`CLAUDE.md`](CLAUDE.md) ("Available skills" / "Available agents" sections).
 
-### 3. Usage depuis Claude Chat (web / onglet Chat du Desktop)
+### 3. Use from Claude Chat (web / Desktop Chat tab)
 
 ```bash
 claude plugin package product-os/
 ```
-→ génère un fichier plugin installable. Dans Claude Chat : **"+" → Plugins → uploader le fichier**.
+→ produces an installable plugin file. In Claude Chat: **"+" → Plugins → upload the file**.
 
-Limites : ça fonctionne pour les skills, pas les agents (Code/Cowork uniquement). Pas de sync live — à chaque évolution de `product-os/`, il faut re-packager et re-uploader.
+Limits: this works for skills, not agents (Code/Cowork only). No live sync — each time `product-os/` changes, you need to re-package and re-upload.
 
 ---
 
-## Flow produit standard
+## Standard product flow
 
 ```
-Idée
- └→ [skill] write-spec          → spec structurée                     (démo)
- └→ [skill] prd-functional      → PRD fonctionnel                     (version complète)
- └→ [skill] prd-technical       → PRD technique (prêt à coder)        (version complète)
- └→ [skill] spec-to-linear      → tickets Linear créés                (version complète)
- └→ [agent] feature-builder     → Claude Code implémente              (version complète)
- └→ [skill] code-review         → review avant merge                  (version complète)
+Idea
+ └→ [skill] write-spec          → structured spec                        (demo)
+ └→ [skill] prd-functional      → functional PRD                         (full version)
+ └→ [skill] prd-technical       → technical PRD (ready to code)          (full version)
+ └→ [skill] spec-to-linear      → Linear tickets created                 (full version)
+ └→ [agent] feature-builder     → Claude Code implements                 (full version)
+ └→ [skill] code-review         → review before merge                    (full version)
 ```
 
-En amont du flow, indépendamment : `[skill] benchmark` → analyse concurrentielle structurée *(démo)*.
+Upstream of the flow, independently: `[skill] benchmark` → structured competitive analysis *(demo)*.
 
 ---
 
-## Ajouter un skill
+## Adding a skill
 
-Copie `templates/new-skill.md` dans `skills/<nom-du-skill>/SKILL.md`, remplis les sections (dont le frontmatter `name`/`description`). Rien d'autre à faire — en mode plugin, le nouveau skill est disponible dès la session `claude-os` suivante.
+Copy `templates/new-skill.md` into `skills/<skill-name>/SKILL.md`, then fill in the sections (including the `name`/`description` frontmatter). Nothing else to do — in plugin mode, the new skill is available from the next `claude-os` session.
 
 ---
 
-## Statut des skills
+## Skill status
 
-🟢 Ready = instructions/format/règles complets, prêt à l'emploi. Les autres skills du système complet (Meta, Code, Product, Pro) vivent dans la version privée et n'apparaissent pas dans cette démo.
+🟢 Ready = instructions, format, and rules are complete and ready to use. The other skills in the full system (Meta, Code, Product, Pro) live in the private version and do not appear in this demo.
 
-| Skill | Catégorie | Statut |
+| Skill | Category | Status |
 |---|---|---|
 | [`create-skill`](skills/create-skill/SKILL.md) | Meta | 🟢 Ready |
 | [`init-project`](skills/init-project/SKILL.md) | Meta | 🟢 Ready |
