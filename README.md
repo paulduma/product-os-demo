@@ -1,6 +1,6 @@
 # 🧠 Product OS — Demo
 
-> 👁️ **This is a demo version, meant for presentation.** It shows the architecture of an AI operating system that I created for a personal usage, to which I have extended it to a professional usage. 
+> 👁️ **[WIP] This is a demo version, meant for presentation.** It shows the architecture of an AI operating system that I created for a personal usage, to which I have extended it to a professional usage. 
 It contains a set of skills, workflows and documentation that is meant to be used for projects you're working on, alone or with your teams.
 Only 4 representative skills are displayed in detail in that repo (`create-skill`, `write-spec`, `benchmark`, `init-project`); the rest (other skills, agents) lives in the private version and does not appear here.
 
